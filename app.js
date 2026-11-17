@@ -61,8 +61,12 @@ function drawPipeline(d){
  const add=(tag,attrs,parent=svg)=>{const n=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>n.setAttribute(k,v));parent.append(n);return n;};
  // 0~1 구간의 차이가 확실히 드러나도록 기본 굵기를 낮추고 계수에 비례해 최대 58px까지 확대
  const maxLink=Math.max(Number(d.sensitivity)||0,Number(d.influence)||0,0.0001);const lw=8+56*(Math.max(0,Number(d.sensitivity)||0)/maxLink),rw=8+56*(Math.max(0,Number(d.influence)||0)/maxLink);
- add('line',{x1:178,y1:145,x2:342,y2:145,stroke:'#397bb8','stroke-width':lw,'stroke-linecap':'round'});
- add('line',{x1:558,y1:145,x2:722,y2:145,stroke:'#174b7a','stroke-width':rw,'stroke-linecap':'round'});
+ add('line',{x1:178,y1:145,x2:374,y2:145,stroke:'#397bb8','stroke-width':lw,'stroke-linecap':'round'});
+ add('line',{x1:526,y1:145,x2:722,y2:145,stroke:'#174b7a','stroke-width':rw,'stroke-linecap':'round'});
+ // 원과 맞닿는 전방·후방 파이프 끝에 동일한 크기의 화살촉을 배치
+ // 전방(왼쪽): 원의 왼쪽 접점으로 향함 / 후방(오른쪽): 원의 오른쪽 접점으로 향함
+ add('path',{d:'M 354 132 L 374 145 L 354 158 Z',fill:'#397bb8',stroke:'#397bb8','stroke-width':1,'stroke-linejoin':'round'});
+ add('path',{d:'M 506 132 L 526 145 L 506 158 Z',fill:'#174b7a',stroke:'#174b7a','stroke-width':1,'stroke-linejoin':'round'});
  add('circle',{cx:450,cy:145,r:76,fill:'#f0f6fc',stroke:'#2868a8','stroke-width':3});
  const center=add('text',{x:450,y:138,'text-anchor':'middle','font-size':d.name.length>13?13:16,'font-weight':900,fill:'#174b7a'});center.textContent=d.name;
  const centerSub=add('text',{x:450,y:162,'text-anchor':'middle','font-size':11,fill:'#63758a'});centerSub.textContent='선택한 분석 산업';
