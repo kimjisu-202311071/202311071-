@@ -256,7 +256,7 @@ button{background:#1d5c96}button:hover:not(:disabled){background:#164775}button.
 .network-center:before{right:100%;border-radius:5px 0 0 5px}.network-center:after{left:100%;border-radius:0 5px 5px 0}
 .network-column.forward:after,.network-column.backward:before{content:"";position:absolute;top:50%;width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;transform:translateY(-50%);z-index:2}
 .network-column.forward:after{right:-28px;border-left:12px solid #6e9bc4}
-.network-column.backward:before{left:-28px;border-right:12px solid #6e9bc4}
+.network-column.backward:before{left:-28px;border-left:12px solid #6e9bc4}
 .network-center small,.network-center span{font-size:.68rem;color:#6b8298}.network-center strong{font-size:.95rem;overflow-wrap:anywhere}
 @media(max-width:680px){.network-grid{grid-template-columns:1fr;gap:10px}.network-center{grid-row:1}.network-center:before,.network-center:after,.network-column.forward:after,.network-column.backward:before{display:none}.network-node{padding:7px}.average-marker:after{font-size:8px}}
 
